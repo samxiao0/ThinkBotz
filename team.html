@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEAM</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <meta name="description" content="Meet the ThinkBotz Student Association Team">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+        <div class="bubbles">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <img src="TB Logo.png" alt="ThinkBotz Logo">
+      <h1>ThinkBotz</h1>
+    </div>
+    <nav class="nav">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="team.html" class="active">Team</a></li>
+        <li><a href="contact.html">About</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Team Section -->
+  <main class="team-section">
+    <h1>Meet Our Team</h1>
+    <p>We are a group of passionate individuals dedicated to making a difference.</p>
+
+    <!-- Core Team -->
+    <section class="team-category">
+      <h2>Core Committee</h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <img src="TB Logo.png" alt="President">
+          <h3>President</h3>
+          <p>John Doe</p>
+        </div>
+        <div class="team-card">
+          <img src="TB Logo.png" alt="Vice President">
+          <h3>Vice President</h3>
+          <p>Jane Smith</p>
+        </div>
+        <div class="team-card">
+          <img src="TB Logo.png" alt="Secretary">
+          <h3>Secretary</h3>
+          <p>Michael Johnson</p>
+        </div>
+        <div class="team-card">
+          <img src="TB Logo.png" alt="Treasurer">
+          <h3>Treasurer</h3>
+          <p>Emily Davis</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Media Team -->
+    <section class="team-category">
+      <h2>Media Team</h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <img src="TB Logo.png" alt="Media Member">
+          <h3>Media Lead</h3>
+          <p>Alice Brown</p>
+        </div>
+        <div class="team-card">
+          <img src="TB Logo.png" alt="Media Member">
+          <h3>Media Team</h3>
+          <p>Chris Wilson</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Team -->
+    <section class="team-category">
+      <h2>Technical Team</h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <img src="TB Logo.png" alt="Technical Member">
+          <h3>Tech Lead</h3>
+          <p>David Lee</p>
+        </div>
+        <div class="team-card">
+          <img src="TB Logo.png" alt="Technical Member">
+          <h3>Technical Team</h3>
+          <p>Sophia Martinez</p>
+        </div>
+      </div>
+    </section>
+  </main>
+<style>
+/* ================= TEAM PAGE ================= */
+
+/* Team Section */
+.team-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.team-section h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  text-shadow: 0 0 20px #ff00cc, 0 0 40px #00ccff;
+}
+
+.team-section p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  opacity: 0.9;
+}
+
+/* Team Categories */
+.team-category {
+  margin-bottom: 50px;
+}
+
+.team-category h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  text-shadow: 0 0 15px #33ccff, 0 0 30px #ff66ff;
+}
+
+/* Team Grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+/* Team Cards */
+.team-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 25px 20px;
+  max-width: 260px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  transition: 0.3s;
+}
+
+.team-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 25px #ff66ff, 0 0 40px #33ccff;
+}
+
+/* Profile Images */
+.team-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #00f2ff;
+  box-shadow: 0 0 15px #00f2ff;
+}
+
+/* Names & Roles */
+.team-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #fff;
+  text-shadow: 0 0 10px #ff66ff;
+}
+
+.team-card p {
+  font-size: 1rem;
+  color: #ddd;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .team-section h1 {
+    font-size: 2.2rem;
+  }
+
+  .team-category h2 {
+    font-size: 1.6rem;
+  }
+}
+/* Team Grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+/* Team Cards - fixed size */
+.team-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 25px 20px;
+  width: 100%;
+  max-width: 280px;
+  min-height: 360px;   /* 👈 force equal height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  transition: 0.3s;
+}
+
+.team-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 25px #ff66ff, 0 0 40px #33ccff;
+}
+
+/* Profile Images */
+.team-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #00f2ff;
+  box-shadow: 0 0 15px #00f2ff;
+  flex-shrink: 0;
+}
+
+/* Names & Roles */
+.team-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #fff;
+  text-shadow: 0 0 10px #ff66ff;
+}
+
+.team-card p {
+  font-size: 1rem;
+  color: #ddd;
+  margin-bottom: auto; /* 👈 pushes text up, keeps bottom spacing equal */
+}
+
+
+</style> 
+
+<!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 ThinkBotz Student Association</p>
+  </footer>
+</body>
+</html>

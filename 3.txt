@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ThinkBotz</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <img src="TB Logo.png" alt="ThinkBotz Logo">
+      <h1>ThinkBotz</h1>
+    </div>
+    <nav class="nav">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="contact.html">About</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Welcome to ThinkBotz</h2>
+    <p>The Student Association for Innovation & Creativity</p>
+    <a href="#" class="btn">Join Us</a>
+  </section>
+
+  <!-- Events Section -->
+  <section class="events">
+    <h2>Upcoming Events</h2>
+    <div class="event-card">
+      <h3>AI Workshop</h3>
+      <p>Date: 10 Sept 2025</p>
+      <p>Learn AI & ML with hands-on sessions.</p>
+    </div>
+    <div class="event-card">
+      <h3>Hackathon</h3>
+      <p>Date: 20 Sept 2025</p>
+      <p>24 hours of coding, creativity, and fun.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 ThinkBotz Student Association</p>
+  </footer>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

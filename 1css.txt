@@ -1,0 +1,281 @@
+:root {
+    --primary-color: #FFB6C1; /* Light Pink */
+    --secondary-color: #9370DB; /* Medium Purple */
+    --accent-color: #FFD700; /* Gold */
+    --background-color: #F8F8FF; /* Ghost White */
+    --text-color: #4B0082; /* Indigo */
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+header {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 1rem 0;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.hero {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: var(--secondary-color);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--accent-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+}
+
+.hero .btn:hover {
+    background: var(--white);
+    color: var(--accent-color);
+}
+
+/* Animated Gradient Background */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, #FFB6C1, #FFD700, #9370DB, #FF69B4);
+    background-size: 400% 400%;
+    z-index: -1;
+    animation: gradientAnimation 10s infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Floating Particles */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"%3E%3Ccircle cx="50" cy="50" r="10" fill="%23FFD700" opacity="0.7"%3E%3C/circle%3E%3C/svg%3E') repeat;
+    background-size: 50px 50px;
+    animation: floatParticles 5s linear infinite;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+@keyframes floatParticles {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100px 100px;
+    }
+}
+
+.about {
+    padding: 2rem 1rem;
+    text-align: center;
+    background: var(--white);
+    color: var(--text-color);
+}
+
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+.events {
+    padding: 2rem 1rem;
+    background: var(--background-color);
+    text-align: center;
+}
+
+.events h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.event-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.event-box {
+    background: var(--white);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.event-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.event-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.event-box p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.event-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.event-buttons .btn {
+    flex: 1;
+    padding: 0.5rem;
+    text-align: center;
+    background: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+}
+
+.event-buttons .btn:hover {
+    background: var(--accent-color);
+    color: var(--white);
+}
+
+.event-buttons .apply-btn {
+    background: var(--secondary-color);
+}
+
+.event-buttons .apply-btn:hover {
+    background: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: var(--primary-color);
+        position: absolute;
+        top: 0; /* Aligns the menu with the header */
+        left: 0; /* Ensures it starts from the left edge */
+        width: 100%; /* Makes it span the full width of the screen */
+        z-index: 1000; /* Ensures it appears above other elements */
+        padding: 1rem 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 0.5rem 1rem;
+        text-align: center;
+        border-bottom: 1px solid var(--white);
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}

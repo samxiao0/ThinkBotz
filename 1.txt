@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <meta name="description" content="A brief description of the webpage">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">MyWebsite</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="menu-toggle">☰</button>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>Welcome to MyWebsite</h1>
+            <p>Your one-stop destination for amazing content.</p>
+            <a href="#about" class="btn">Learn More</a>
+        </section>
+        <section id="about" class="about">
+            <h2>About Us</h2>
+            <p>We are dedicated to providing the best experience for our users.</p>
+        </section>
+        <section class="events">
+            <h2>Upcoming Events</h2>
+            <div class="event-container">
+                <div class="event-box">
+                    <h3>Event 1</h3>
+                    <p>Brief description of Event 1.</p>
+                    <div class="event-buttons">
+                        <a href="#" class="btn">View More</a>
+                        <a href="#" class="btn apply-btn">Apply</a>
+                    </div>
+                </div>
+                <div class="event-box">
+                    <h3>Event 2</h3>
+                    <p>Brief description of Event 2.</p>
+                    <div class="event-buttons">
+                        <a href="#" class="btn">View More</a>
+                        <a href="#" class="btn apply-btn">Apply</a>
+                    </div>
+                </div>
+                <div class="event-box">
+                    <h3>Event 3</h3>
+                    <p>Brief description of Event 3.</p>
+                    <div class="event-buttons">
+                        <a href="#" class="btn">View More</a>
+                        <a href="#" class="btn apply-btn">Apply</a>
+                    </div>
+                </div>
+                <div class="event-box">
+                    <h3>Event 4</h3>
+                    <p>Brief description of Event 4.</p>
+                    <div class="event-buttons">
+                        <a href="#" class="btn">View More</a>
+                        <a href="#" class="btn apply-btn">Apply</a>
+                    </div>
+                </div>
+                <div class="event-box">
+                    <h3>Event 5</h3>
+                    <p>Brief description of Event 5.</p>
+                    <div class="event-buttons">
+                        <a href="#" class="btn">View More</a>
+                        <a href="#" class="btn apply-btn">Apply</a>
+                    </div>
+                </div>
+                <div class="event-box">
+                    <h3>Event 6</h3>
+                    <p>Brief description of Event 6.</p>
+                    <div class="event-buttons">
+                        <a href="#" class="btn">View More</a>
+                        <a href="#" class="btn apply-btn">Apply</a>
+                    </div>
+                </div>
+                <div class="event-box">
+                    <h3>Event 7</h3>
+                    <p>Brief description of Event 7.</p>
+                    <div class="event-buttons">
+                        <a href="#" class="btn">View More</a>
+                        <a href="#" class="btn apply-btn">Apply</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 MyWebsite. All rights reserved.</p>
+    </footer>
+</body>
+</html>

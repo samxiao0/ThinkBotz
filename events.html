@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events | ThinkBotz</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <meta name="description" content="Upcoming events at ThinkBotz Student Association">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    /* --- Your existing CSS stays the same --- */
+
+    /* Event Details Inside Card */
+    .event-details {
+      display: none;
+      margin-top: 15px;
+      padding: 20px;
+      border-radius: 15px;
+      background: rgba(0, 0, 0, 0.5);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    .event-card.active .event-details {
+      display: block;
+    }
+
+    .event-details h4 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px #ff66ff;
+    }
+
+    .event-details p {
+      margin: 8px 0;
+      font-size: 1rem;
+    }
+
+    .event-details button {
+      margin-top: 15px;
+      padding: 8px 20px;
+      border: none;
+      border-radius: 20px;
+      background: linear-gradient(90deg, #3333ff, #ff00cc);
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 0 10px #3333ff, 0 0 20px #ff00cc;
+      transition: 0.3s;
+    }
+
+    .event-details button:hover {
+      transform: scale(1.05);
+    }
+    /* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc, #ff4b2b);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  width: 100%;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-shadow: 0 0 10px #ff00cc, 0 0 20px #3333ff;
+}
+
+/* Navigation */
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: #ff66ff;
+  text-shadow: 0 0 10px #ff66ff, 0 0 20px #33ccff;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+/* Event Page Title */
+h1 {
+  text-align: center;
+  margin: 40px 0 20px;
+  font-size: 2.5rem;
+  text-shadow: 0 0 15px #33ccff, 0 0 30px #ff66ff;
+}
+
+/* Event Cards */
+.event-card {
+  background: rgba(255, 255, 255, 0.1);
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 600px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.133);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.event-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px #ff66ff, 0 0 40px #33ccff;
+}
+
+.event-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px #00f2ff;
+}
+
+.event-card p {
+  margin: 8px 0;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Event Card Buttons */
+.event-card button {
+  margin: 10px 5px 0;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #ff00cc, #3333ff);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 10px #ff00cc, 0 0 20px #3333ff;
+}
+
+.event-card button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff00cc, 0 0 30px #3333ff;
+}
+
+/* Event Details Section */
+.event-details {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 20px;
+  box-shadow: 0 0 20px #00f2ff;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.event-details h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 15px #ff66ff;
+}
+
+.event-details p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.event-details button {
+  margin-top: 20px;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #3333ff, #ff00cc);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 10px #3333ff, 0 0 20px #ff00cc;
+}
+
+.event-details button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #3333ff, 0 0 40px #ff00cc;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+  background: rgba(0, 0, 0, 0.6);
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 40px;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  .nav ul.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .event-card {
+    margin: 15px;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    background: linear-gradient(135deg, #2B0A60, #3A0CA3, #4361EE, #7209B7, #F72585);
+    background-size: 300% 300%;
+    animation: gradientAnimation 12s ease infinite;
+}
+
+/* Gradient Animation */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Navbar */
+.navbar {
+    background: rgba(20, 20, 50, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #F72585, #7209B7, #4361EE);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 5rem 2rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #F72585, #7209B7, #4361EE);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #e0e0ff;
+    margin-top: 1rem;
+}
+
+/* Button */
+.btn {
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    background: linear-gradient(90deg, #F72585, #7209B7);
+    color: #fff;
+    box-shadow: 0px 4px 15px rgba(114, 9, 183, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 20px rgba(114, 9, 183, 0.8);
+}
+.bubbles {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.bubbles span {
+  position: absolute;
+  display: block;
+  bottom: -150px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  animation: rise 25s infinite ease-in;
+}
+
+/* Random sizes + positions */
+.bubbles span:nth-child(1) { left: 10%; width: 80px; height: 80px; animation-delay: 0s; }
+.bubbles span:nth-child(2) { left: 25%; width: 100px; height: 100px; animation-delay: 4s; }
+.bubbles span:nth-child(3) { left: 40%; width: 60px; height: 60px; animation-delay: 8s; }
+.bubbles span:nth-child(4) { left: 55%; width: 120px; height: 120px; animation-delay: 2s; }
+.bubbles span:nth-child(5) { left: 70%; width: 90px; height: 90px; animation-delay: 6s; }
+.bubbles span:nth-child(6) { left: 85%; width: 70px; height: 70px; animation-delay: 3s; }
+.bubbles span:nth-child(7) { left: 50%; width: 150px; height: 150px; animation-delay: 10s; }
+.bubbles span:nth-child(8) { left: 30%; width: 110px; height: 110px; animation-delay: 12s; }
+
+/* Floating animation */
+@keyframes rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-50vh) scale(1.2);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100vh) scale(0.8);
+    opacity: 0;
+  }
+}
+
+
+
+  </style>
+</head>
+<body>
+  <!-- Floating bubbles -->
+  <div class="bubbles">
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <img src="TB Logo.png" alt="ThinkBotz Logo">
+      <h1>ThinkBotz</h1>
+    </div>
+    <nav class="nav">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html" class="active">Events</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="contact.html">About</a></li>
+      </ul>
+      <div class="hamburger"><span></span><span></span><span></span></div>
+    </nav>
+  </header>
+
+  <!-- Events Section -->
+  <main>
+    <h1>Upcoming Events</h1>
+
+    <!-- Event 1 -->
+    <div class="event-card">
+      <h3>Lens Craft</h3>
+      <img src="1.png" alt="">
+      <p>Date: 20 Sept 2025</p>
+      <p>24 hours of coding, creativity, and fun.</p>
+      <button class="view-more">View More</button>
+      <button onclick="applyEvent('lenscraft')">Apply for Event</button>
+
+      <!-- Hidden details inside -->
+      <div class="event-details">
+        <h4>Hackathon</h4>
+        <p>Date: 20 Sept 2025</p>
+        <p>A thrilling 24-hour hackathon where students collaborate, innovate, and code to solve real-world problems. Prizes, certificates, and networking opportunities included!</p>
+        <button class="close-details">Close</button>
+      </div>
+    </div>
+
+    <!-- Event 2 -->
+    <div class="event-card">
+      <h3>Logic League</h3>
+      <img src="1.png" alt="">
+      <p>Date: 10 Sept 2025</p>
+      <p>Learn AI & ML with hands-on sessions.</p>
+      <button class="view-more">View More</button>
+      <button onclick="applyEvent('aiworkshop')">Apply for Event</button>
+
+      <!-- Hidden details inside -->
+      <div class="event-details">
+        <h4>AI Workshop</h4>
+        <p>Date: 10 Sept 2025</p>
+        <p>A hands-on AI & ML workshop for beginners and enthusiasts. Learn neural networks, Python coding for AI, and build real-time projects guided by mentors.</p>
+        <button class="close-details">Close</button>
+      </div>
+    </div>
+    <!-- Event 3 -->
+    <div class="event-card">
+      <h3>Mind Spark</h3>
+      <img src="1.png" alt="">
+      <p>Date: 10 Sept 2025</p>
+      <p>Learn AI & ML with hands-on sessions.</p>
+      <button class="view-more">View More</button>
+      <button onclick="applyEvent('mindspark')">Apply for Event</button>
+
+      <!-- Hidden details inside -->
+      <div class="event-details">
+        <h4>Mind Spark</h4>
+        <p>Date: 10 Sept 2025</p>
+        <p>A hands-on AI & ML workshop for beginners and enthusiasts. Learn neural networks, Python coding for AI, and build real-time projects guided by mentors.</p>
+        <button class="close-details">Close</button>
+      </div>
+    </div>
+    <!-- Event 4 -->
+    <div class="event-card">
+      <h3>Poster Vision</h3>
+      <img src="1.png" alt="">
+      <p>Date: 10 Sept 2025</p>
+      <p>Learn AI & ML with hands-on sessions.</p>
+      <button class="view-more">View More</button>
+      <button onclick="applyEvent('postervision')">Apply for Event</button>
+
+      <!-- Hidden details inside -->
+      <div class="event-details">
+        <h4>Poster Vision</h4>
+        <p>Date: 10 Sept 2025</p>
+        <p>A hands-on AI & ML workshop for beginners and enthusiasts. Learn neural networks, Python coding for AI, and build real-time projects guided by mentors.</p>
+        <button class="close-details">Close</button>
+      </div>
+    </div>
+    <!-- Event 5 -->
+    <div class="event-card">
+      <h3>Prompt Fusion</h3>
+      <img src="1.png" alt="">
+      <p>Date: 10 Sept 2025</p>
+      <p>Learn AI & ML with hands-on sessions.</p>
+      <button class="view-more">View More</button>
+      <button onclick="applyEvent('promptfusion')">Apply for Event</button>
+
+      <!-- Hidden details inside -->
+      <div class="event-details">
+        <h4>Prompt Fusion</h4>
+        <p>Date: 10 Sept 2025</p>
+        <p>A hands-on AI & ML workshop for beginners and enthusiasts. Learn neural networks, Python coding for AI, and build real-time projects guided by mentors.</p>
+        <button class="close-details">Close</button>
+      </div>
+    </div>
+    <!-- Event 6 -->
+    <div class="event-card">
+      <h3>Smart Stacks</h3>
+      <img src="1.png" alt="">
+      <p>Date: 10 Sept 2025</p>
+      <p>Learn AI & ML with hands-on sessions.</p>
+      <button class="view-more">View More</button>
+      <button onclick="applyEvent('smartstacks')">Apply for Event</button>
+
+      <!-- Hidden details inside -->
+      <div class="event-details">
+        <h4>Smart Stacks</h4>
+        <p>Date: 10 Sept 2025</p>
+        <p>A hands-on AI & ML workshop for beginners and enthusiasts. Learn neural networks, Python coding for AI, and build real-time projects guided by mentors.</p>
+        <button class="close-details">Close</button>
+      </div>
+    </div>
+    <!-- Event 7 -->
+    <div class="event-card">
+      <h3>AI Builders Arena</h3>
+      <img src="1.png" alt="">
+      <p>Date: 10 Sept 2025</p>
+      <p>Learn AI & ML with hands-on sessions.</p>
+      <button class="view-more">View More</button>
+      <button onclick="applyEvent('aibuildersarena')">Apply for Event</button>
+
+      <!-- Hidden details inside -->
+      <div class="event-details">
+        <h4>AI Builders Arena</h4>
+        <p>Date: 10 Sept 2025</p>
+        <p>A hands-on AI & ML workshop for beginners and enthusiasts. Learn neural networks, Python coding for AI, and build real-time projects guided by mentors.</p>
+        <button class="close-details">Close</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 ThinkBotz Student Association</p>
+  </footer>
+
+  <script>
+    // Toggle details for each card
+    document.querySelectorAll(".view-more").forEach(btn => {
+      btn.addEventListener("click", function() {
+        let card = this.closest(".event-card");
+        card.classList.toggle("active");
+      });
+    });
+
+    // Close button inside details
+    document.querySelectorAll(".close-details").forEach(btn => {
+      btn.addEventListener("click", function() {
+        this.closest(".event-card").classList.remove("active");
+      });
+    });
+
+    // Apply button alert
+    function applyEvent(eventKey) {
+      alert("You are applying for " + eventKey + ". (Form integration coming soon!)");
+    }
+  </script>
+</body>
+</html>

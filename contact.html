@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CONTACT</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <meta name="description" content="A brief description of the webpage">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+        <div class="bubbles">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <img src="TB Logo.png" alt="ThinkBotz Logo">
+      <h1>ThinkBotz</h1>
+    </div>
+    <nav class="nav">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Page Title -->
+  <section class="contact-header">
+    <h1>Contact Us</h1>
+    <br>
+    <p>If you have any questions or inquiries, feel free to reach out!</p>
+  </section>
+
+  <!-- Contact Info -->
+  <section class="contact-info">
+    <h2>Get in Touch</h2>
+    <ul>
+      <li><strong>Email:</strong> ThinkBotz.sa@gmail.com</li>
+      <li><strong>Phone:</strong> +91 99519 70441</li>
+      <li><strong>Address:</strong> CSE(AI&ML) Department, AITS College,Kadapa(516001), Andhra Pradesh, India</li>
+    </ul>
+  </section>
+
+  <!-- Feedback Form -->
+  <section class="contact-form">
+    <h2>Send Us a Message</h2>
+    <form action="https://api.web3forms.com/submit" method="POST">
+  <!-- Hidden Access Key -->
+  <input type="hidden" name="access_key" value="08f1cd6e-bdfb-484b-a26d-39bafbb3a1b8">
+
+  <label for="name">Your Name</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="email">Your Email</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="subject">Subject</label>
+  <input type="text" id="subject" name="subject" required>
+
+  <label for="message">Message</label>
+  <textarea id="message" name="message" rows="5" required></textarea>
+
+  <!-- Optional: Success Redirect -->
+  <input type="hidden" name="redirect" value="https://yourwebsite.com/thank-you.html">
+
+  <button type="submit">Send Message</button>
+</form>
+
+  </section>
+<style>
+    /* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc, #ff4b2b);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  width: 100%;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center; 
+  gap: 12px;
+}
+
+.logo img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
+
+.logo h1 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1;
+  color: white;
+  text-shadow: 0 0 8px #ff00cc, 0 0 15px #3333ff;
+}
+
+/* Navigation */
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: #ff66ff;
+  text-shadow: 0 0 10px #ff66ff, 0 0 20px #33ccff;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  text-shadow: 0 0 20px #ff00cc, 0 0 40px #00ccff;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin: 20px 0;
+  opacity: 0.9;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: linear-gradient(90deg, #ff00cc, #3333ff);
+  color: white;
+  font-weight: 600;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 0 15px #ff00cc, 0 0 30px #3333ff;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #ff00cc, 0 0 40px #3333ff;
+}
+
+/* Events Section */
+.events {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.events h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-shadow: 0 0 15px #33ccff, 0 0 30px #ff66ff;
+}
+
+.event-card {
+  background: rgba(255, 255, 255, 0.1);
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 500px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  transition: 0.3s;
+}
+
+.event-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px #ff66ff, 0 0 40px #33ccff;
+}
+
+/* Countdown Timer */
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.countdown div {
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid #00f2ff;
+  border-radius: 12px;
+  padding: 10px 15px;
+  text-align: center;
+  color: #fff;
+  min-width: 70px;
+  box-shadow: 0 0 10px #00f2ff;
+}
+
+.countdown span {
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: block;
+  color: #00f2ff;
+}
+
+.countdown p {
+  font-size: 0.9rem;
+  color: #ddd;
+}
+
+/* Contact Page */
+.contact-header {
+  text-align: center;
+  margin: 40px 0 20px;
+}
+
+/* ================================
+   Responsive Contact Info
+================================= */
+.contact-info {
+  text-align: center;
+  margin: 20px auto;
+  padding: 20px;
+  width: 90%;               /* Flexible width */
+  max-width: 560px;         /* Prevent it from stretching too wide */
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  word-wrap: break-word;    /* Prevent overflow from long text */
+}
+
+.contact-info ul {
+  list-style: none;
+  margin-top: 15px;
+  padding: 0;
+}
+
+.contact-info li {
+  margin: 12px 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ✅ Small screens adjustments */
+@media (max-width: 600px) {
+  .contact-info {
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+
+  .contact-info li {
+    font-size: 0.85rem;
+    margin: 8px 0;
+  }
+}
+
+
+.contact-form {
+  margin: 30px auto;
+  padding: 20px;
+  width: 90%;                 /* Flexible width */
+  max-width: 600px;           /* Prevents it from getting too wide */
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  text-align: left;
+}
+
+.contact-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: 600;
+}
+
+/* Form Inputs */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;                /* Always full width */
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+/* Submit Button */
+.contact-form button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.contact-form button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 242, 254, 0.6);
+}
+
+/* ✅ Mobile Optimized */
+@media (max-width: 600px) {
+  .contact-form {
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+
+  .contact-form button {
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+  background: rgba(0, 0, 0, 0.6);
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 40px;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  .nav ul.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+    @media (max-width: 600px) {
+        .hero h2 {
+        font-size: 2.2rem;
+        }
+    
+        .events h2, .contact-header h1 {
+        font-size: 2rem;
+        }
+    
+        .event-card, .contact-form {
+        padding: 15px;
+        margin: 15px;
+        }
+    }
+    /* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    background: linear-gradient(135deg, #2B0A60, #3A0CA3, #4361EE, #7209B7, #F72585);
+    background-size: 300% 300%;
+    animation: gradientAnimation 12s ease infinite;
+}
+
+/* Gradient Animation */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Navbar */
+.navbar {
+    background: rgba(20, 20, 50, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #F72585, #7209B7, #4361EE);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 5rem 2rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #F72585, #7209B7, #4361EE);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #e0e0ff;
+    margin-top: 1rem;
+}
+
+/* Button */
+.btn {
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    background: linear-gradient(90deg, #F72585, #7209B7);
+    color: #fff;
+    box-shadow: 0px 4px 15px rgba(114, 9, 183, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 20px rgba(114, 9, 183, 0.8);
+}
+
+</style>
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 ThinkBotz Student Association</p>
+  </footer>
+</body>
+</html>

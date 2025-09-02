@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ThinkBotz</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+<!-- Particles.js Library -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+</head>
+<body>
+    <div class="bubbles">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <img src="TB Logo.png" alt="ThinkBotz Logo">
+      <h1>ThinkBotz</h1>
+    </div>
+    <nav class="nav">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="contact.html">About</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+  </header>
+  <img src="TB Logo.png" width="300" height="300" style="display: block; margin: 0 auto;" alt="">
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Welcome to ThinkBotz</h2>
+    <p>The Student Association for Innovation & Creativity</p>
+    <a href="#" class="btn">Join Us</a>
+  </section>
+<img src="WhatsApp Image 2025-09-02 at 10.13.34 PM.jpeg" alt="">
+  <!-- Events Section -->
+  <section class="events">
+    <h2>Upcoming Events</h2>
+    <div class="event-card">
+      <h3>Hackathon</h3>
+      <img src="TB Logo.png" alt="Hackathon Event">
+      <p>Date: 20 Sept 2025</p>
+      <p>24 hours of coding, creativity, and fun.</p>
+      <!-- Countdown Timer -->
+      <div id="countdown" class="countdown">
+        <div><span id="days"></span><p>Days</p></div>
+        <div><span id="hours"></span><p>Hours</p></div>
+        <div><span id="minutes"></span><p>Min</p></div>
+        <div><span id="seconds"></span><p>Sec</p></div>
+      </div>
+    </div>
+  
+    
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 ThinkBotz Student Association</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+particlesJS("particles-js", {
+  "particles": {
+    "number": {
+      "value": 100,
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": { "value": "#ffffff" },
+    "shape": { "type": "circle" },
+    "opacity": {
+      "value": 0.6,
+      "random": true
+    },
+    "size": {
+      "value": 3,
+      "random": true
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 120,
+      "color": "#ffffff",
+      "opacity": 0.3,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 2,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "out"
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": { "enable": true, "mode": "grab" },
+      "onclick": { "enable": true, "mode": "push" }
+    },
+    "modes": {
+      "grab": { "distance": 140, "line_linked": { "opacity": 0.6 } },
+      "push": { "particles_nb": 4 }
+    }
+  },
+  "retina_detect": true
+});
+</script>
+
+
+</body>
+</html>
